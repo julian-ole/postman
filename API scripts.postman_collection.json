@@ -1,0 +1,183 @@
+{
+  "info": {
+    "_postman_id": "4c890b66-63a4-40ed-b462-7a72854acd0b",
+    "name": "API scripts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19483515"
+  },
+  "item": [
+    {
+      "name": "Folder",
+      "item": [
+        {
+          "name": "Post name",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": ["console.log('Pre req - request');"],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["console.log('Tests - request')"],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "$randomFirstName",
+                  "value": "{{$randomFirstName}}",
+                  "description": "\tA random first name",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://postman-echo.com/post?name={{$randomFirstName}}",
+              "protocol": "https",
+              "host": ["postman-echo", "com"],
+              "path": ["post"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "{{$randomFirstName}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": ["console.log('Pre req - folder');"]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": ["console.log('Tests - folder');"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Scripts demo",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.collectionVariables.set('param', JSON.parse(responseBody).args.name)",
+              "",
+              "pm.test(\"Status test\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "{{name}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://postman-echo.com/post?name={{name}}",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["post"],
+          "query": [
+            {
+              "key": "name",
+              "value": "{{name}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Set another param",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var paramValue = pm.collectionVariables.get('param');",
+              "pm.collectionVariables.set('param', paramValue + '_pre_req')"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/get?param={{param}}",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["get"],
+          "query": [
+            {
+              "key": "param",
+              "value": "{{param}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": ["console.log('Pre req - collection');"]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": ["console.log('Tests - collection');"]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "name",
+      "value": "Andrew",
+      "type": "string"
+    },
+    {
+      "key": "param",
+      "value": "default"
+    }
+  ]
+}

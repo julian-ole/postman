@@ -1,0 +1,45 @@
+{
+	"id": "8d2941f5-a706-4b7c-8fa4-2416596e2924",
+	"values": [
+		{
+			"key": "name",
+			"value": "Alisa",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "age",
+			"value": "14",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "url",
+			"value": "https://postman-echo.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "count ",
+			"value": "10",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "delay",
+			"value": "4",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "param",
+			"value": "globalParam",
+			"type": "default",
+			"enabled": false
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2023-06-05T12:41:35.390Z",
+	"_postman_exported_using": "Postman/10.14.7"
+}
