@@ -1,245 +1,198 @@
 {
-	"info": {
-		"_postman_id": "16189ec3-bc33-4d55-9864-04dfe0193956",
-		"name": "Petstore requests",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19483515"
-	},
-	"item": [
-		{
-			"name": "Petstore | get",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://petstore.swagger.io/v2/store/inventory",
-					"protocol": "https",
-					"host": [
-						"petstore",
-						"swagger",
-						"io"
-					],
-					"path": [
-						"v2",
-						"store",
-						"inventory"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delay params | path variables",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://postman-echo.com/delay/:delay",
-					"protocol": "https",
-					"host": [
-						"postman-echo",
-						"com"
-					],
-					"path": [
-						"delay",
-						":delay"
-					],
-					"variable": [
-						{
-							"key": "delay",
-							"value": "{{delay}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Query params",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							"console.log('Pre-req \"Query arams\"')"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "https://postman-echo.com/post/?age=2&animal=rabbit&name=Jonny",
-					"protocol": "https",
-					"host": [
-						"postman-echo",
-						"com"
-					],
-					"path": [
-						"post",
-						""
-					],
-					"query": [
-						{
-							"key": "age",
-							"value": "2"
-						},
-						{
-							"key": "animal",
-							"value": "rabbit"
-						},
-						{
-							"key": "name",
-							"value": "Jonny"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Body params | form-data",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "color",
-							"value": "orange",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://postman-echo.com/post",
-					"protocol": "https",
-					"host": [
-						"postman-echo",
-						"com"
-					],
-					"path": [
-						"post"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Body params | raw",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Elie\",\n    \"age\": \"15\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://postman-echo.com/put",
-					"protocol": "https",
-					"host": [
-						"postman-echo",
-						"com"
-					],
-					"path": [
-						"put"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Variables in request",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "https://postman-echo.com/post/?name={{name}}&age={{age}}",
-					"protocol": "https",
-					"host": [
-						"postman-echo",
-						"com"
-					],
-					"path": [
-						"post",
-						""
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "{{name}}"
-						},
-						{
-							"key": "age",
-							"value": "{{age}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Url as a variable",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/post/?name={{name}}&age={{age}}",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"post",
-						""
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "{{name}}"
-						},
-						{
-							"key": "age",
-							"value": "{{age}}"
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "delay",
-			"value": "3",
-			"type": "string"
-		}
-	]
+  "info": {
+    "_postman_id": "16189ec3-bc33-4d55-9864-04dfe0193956",
+    "name": "Petstore requests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19483515"
+  },
+  "item": [
+    {
+      "name": "Petstore | get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/store/inventory",
+          "protocol": "https",
+          "host": ["petstore", "swagger", "io"],
+          "path": ["v2", "store", "inventory"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delay params | path variables",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/delay/:delay",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["delay", ":delay"],
+          "variable": [
+            {
+              "key": "delay",
+              "value": "{{delay}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Query params",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": ["console.log('Pre-req \"Query params\"')"],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/post/?age=2&animal=rabbit&name=Jonny",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["post", ""],
+          "query": [
+            {
+              "key": "age",
+              "value": "2"
+            },
+            {
+              "key": "animal",
+              "value": "rabbit"
+            },
+            {
+              "key": "name",
+              "value": "Jonny"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Body params | form-data",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "color",
+              "value": "orange",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://postman-echo.com/post",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["post"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Body params | raw",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Elie\",\n    \"age\": \"15\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://postman-echo.com/put",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["put"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Variables in request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/post/?name={{name}}&age={{age}}",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["post", ""],
+          "query": [
+            {
+              "key": "name",
+              "value": "{{name}}"
+            },
+            {
+              "key": "age",
+              "value": "{{age}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Url as a variable",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/post/?name={{name}}&age={{age}}",
+          "host": ["{{url}}"],
+          "path": ["post", ""],
+          "query": [
+            {
+              "key": "name",
+              "value": "{{name}}"
+            },
+            {
+              "key": "age",
+              "value": "{{age}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "delay",
+      "value": "3",
+      "type": "string"
+    }
+  ]
 }
